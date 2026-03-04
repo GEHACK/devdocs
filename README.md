@@ -1,3 +1,7 @@
+# GEHACK Fork of DevDocs
+
+This fork just ensures that during the Docker build only the contest languages for the FPC, EAPC and EUC are downloaded.
+***
 # [DevDocs](https://devdocs.io) — API Documentation Browser
 
 DevDocs combines multiple developer documentations in a clean and organized web UI with instant search, offline support, mobile version, dark theme, keyboard shortcuts, and more.
