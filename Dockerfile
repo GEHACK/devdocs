@@ -1,4 +1,4 @@
-FROM ruby:3.4.7
+FROM ruby:3.4.8
 ENV LANG=C.UTF-8
 ENV ENABLE_SERVICE_WORKER=true
 
@@ -17,7 +17,7 @@ RUN bundle config set path.system true && \
 
 COPY . /devdocs
 
-RUN thor docs:download --all && \
+RUN thor docs:download c cpp python@3.14 openjdk@21 kotlin@1.9 && \
     thor assets:compile && \
     rm -rf /tmp
 
