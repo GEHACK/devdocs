@@ -12,7 +12,7 @@ RUN apk --update add nodejs build-base libstdc++ libarchive-tools git zlib-dev l
     bundle config set path.system true && \
     bundle config set without 'test' && \
     bundle install && \
-    thor docs:download c cpp python@3.14 openjdk@21 kotlin@1.9 && \
+    thor docs:download c cpp python@3.11 openjdk@21 kotlin@2 && \
     thor assets:compile && \
     apk del libarchive-tools build-base git zlib-dev && \
     rm -rf /var/cache/apk/* /tmp ~/.gem /root/.bundle/cache \
