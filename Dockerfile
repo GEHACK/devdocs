@@ -17,7 +17,7 @@ RUN bundle config set path.system true && \
 
 COPY . /devdocs
 
-RUN thor docs:download c cpp python@3.14 openjdk@21 && \
+RUN thor docs:download c cpp python@3.11 openjdk@21, kotlin@2 && \
     thor assets:compile && \
     rm -rf /tmp
 
