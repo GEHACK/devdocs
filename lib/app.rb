@@ -38,6 +38,7 @@ class App < Sinatra::Application
 
     set :sentry_dsn, ENV['SENTRY_DSN']
     set :protection, except: [:frame_options, :xss_header]
+    set :host_authorization, permitted_hosts: ENV['PERMITTED_HOSTS'].split(',') if ENV['PERMITTED_HOSTS']
 
     set :root, Pathname.new(File.expand_path('../..', __FILE__))
     set :sprockets, Sprockets::Environment.new(root)
