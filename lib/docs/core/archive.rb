@@ -33,7 +33,7 @@ module Docs
       FileUtils.rm_rf(destination)
       FileUtils.mkpath(destination)
 
-      argv = ['bsdtar', '-xf', archive, '-C', destination]
+      argv = ['bsdtar', '-xf', archive, '--no-xattrs', '-C', destination]
       # The components of the directory are stripped from every member that's
       # extracted, so that its contents end up at the root of destination.
       argv.push("--strip-components=#{directory.count('/') + 1}", directory) if directory
