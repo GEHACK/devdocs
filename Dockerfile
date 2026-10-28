@@ -5,7 +5,7 @@ ENV ENABLE_SERVICE_WORKER=true
 WORKDIR /devdocs
 
 RUN apt-get update && \
-    apt-get -y install git nodejs libcurl4 libarchive-tools webp && \
+    apt-get -y install git nodejs libcurl4 libarchive-tools libyaml-dev webp && \
     gem install bundler && \
     rm -rf /var/lib/apt/lists/*
 
@@ -17,7 +17,7 @@ RUN bundle config set path.system true && \
 
 COPY . /devdocs
 
-RUN thor docs:download --all && \
+RUN thor docs:download c cpp python@3.11 openjdk@21 kotlin@2 && \
     thor assets:compile && \
     rm -rf /tmp
 
